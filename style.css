@@ -32,7 +32,7 @@ input[type="text"], input[type="password"] {
 input[type="submit"] {
 	width: 100%;
 	padding: 10px;
-	background-color: #4CAF50;
+	background-color: #333; /* dark grey */
 	color: #fff;
 	border: none;
 	border-radius: 10px;
