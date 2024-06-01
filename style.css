@@ -1,106 +1,65 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-html {
-  font-size: 16px;
-  word-spacing: 1px;
-  text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  background-color: rgb(242 245 247);
-  color: #4d5068;
-  font-family: 'Open Sans', sans-serif;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('img.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-}
-
-.hero {
-  background-color: #6371c5;
-  padding: 5em 0;
-}
-
-.hero-text {
-  text-align: center;
-  color: white;
-}
-
-.hero-cta {
-  margin-top: 2em;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero a {
-  border: 1px solid #fff;
-  color: #fff;
-  background-color: #6371c5;
-  padding: 0.5em;
-  text-decoration: none;
-  border-radius: 5px;
-  margin-right: 0.5em;
-  margin-bottom: 0.5em;
-}
-
-.body-content {
-  padding: 1em;
-  margin-bottom: 4em;
-}
-
-.wrapper {
-  display: flex;
-  flex-flow: wrap;
-}
-
-.card {
-  width: 30%;
-  margin: 0.5em;
-  text-decoration: none;
-  background: #fff;
-  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
-  transition: 0.3s;
-  border-radius: 5px;
-
-  /* 5px rounded corners */
-}
-
-@media screen and (width <= 640px) {
-  .card {
+.product-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    max-width: 800px;
     width: 100%;
-  }
 }
 
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-  box-shadow: 0 8px 16px 0 rgb(0 0 0 / 20%);
+.product-image img {
+    max-width: 300px;
+    border-radius: 10px;
 }
 
-/* Add some padding inside the card container */
-.card > .container {
-  padding: 1em;
+.product-details {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.card > .container > h4 {
-  color: #4a4a4a;
-  line-height: 1.5;
+.product-details h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
 }
 
-.card > .container > p {
-  color: #959090;
-  padding-top: 0.5em;
+.product-details p {
+    font-size: 16px;
+    color: #666;
+    margin: 10px 0;
 }
 
-/* Add rounded corners to the top left and the top right corner of the image */
-.card > img {
-  border-radius: 5px 5px 0 0;
-  height: 200px;
-  object-fit: cover;
+.price {
+    font-size: 20px;
+    color: #e67e22;
+    font-weight: bold;
+}
+
+.buy-now {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.buy-now:hover {
+    background-color: #d35400;
 }
