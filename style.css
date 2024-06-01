@@ -25,7 +25,7 @@ body {
 }
 
 input[type="text"], input[type="password"] {
-  width: 100%;
+  width: 90%;
   padding: 14px; /* increased padding for better usability */
   margin: 10px auto; /* add some margin to create space between fields */
   border: none;
