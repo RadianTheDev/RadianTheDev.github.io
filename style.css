@@ -1,45 +1,80 @@
 /* Add some basic styling to make it look nice */
 body {
-	font-family: Arial, sans-serif;
-	background-image: url('img.jpg'); /* replace with your own image */
-	background-size: cover;
-	background-position: center;
-	height: 100vh;
-	margin: 0;
+  font-family: Arial, sans-serif;
+  background-image: url('img.jpg'); /* replace with your own image */
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  margin: 0;
+  display: flex; /* add flexbox to center the container */
+  justify-content: center;
+  align-items: center;
 }
 
 /* Create a container for the login form */
 .container {
-	width: 300px;
-	margin: 40px auto;
-	padding: 20px;
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 10px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 350px; /* increased width for better usability */
+  margin: 40px auto;
+  padding: 30px; /* increased padding for better readability */
+  background-color: rgba(255, 255, 255, 0.8); /* increased opacity for better contrast */
+  border-radius: 20px; /* increased border radius for a softer look */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* increased box shadow for a more dramatic effect */
 }
 
 /* Style the login form fields */
 input[type="text"], input[type="password"] {
-	width: 100%;
-	padding: 10px;
-	margin-bottom: 20px;
-	border: none;
-	border-radius: 10px;
-	background-color: rgba(255, 255, 255, 0.5);
+  width: 100%;
+  padding: 15px; /* increased padding for better usability */
+  margin-bottom: 25px; /* increased margin for better spacing */
+  border: none;
+  border-radius: 15px; /* increased border radius for a softer look */
+  background-color: rgba(255, 255, 255, 0.8); /* increased opacity for better contrast */
+  font-size: 18px; /* increased font size for better readability */
+  transition: border-color 0.3s ease; /* add transition for a smoother effect */
+}
+
+input[type="text"]:focus, input[type="password"]:focus {
+  border-color: #aaa; /* add a subtle border color on focus */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* add a subtle box shadow on focus */
 }
 
 /* Style the login button */
 input[type="submit"] {
-	width: 100%;
-	padding: 10px;
-	background-color: #333; /* dark grey */
-	color: #fff;
-	border: none;
-	border-radius: 10px;
-	cursor: pointer;
+  width: 100%;
+  padding: 15px; /* increased padding for better usability */
+  background-color: #337ab7; /* a more vibrant blue color */
+  color: #fff;
+  border: none;
+  border-radius: 15px; /* increased border radius for a softer look */
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* add transition for a smoother effect */
 }
 
-/* Add some hover effects */
 input[type="submit"]:hover {
-	background-color: #666666;
+  background-color: #23527c; /* a darker blue color on hover */
+}
+
+/* Add some additional styling for a more modern look */
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.2); /* add a subtle overlay effect */
+  border-radius: 20px;
+  z-index: -1;
+}
+
+.container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background-color: rgba(0, 0, 0, 0.1); /* add a subtle shadow effect */
+  border-radius: 20px;
+  z-index: -1;
 }
