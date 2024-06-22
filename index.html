@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moealturej Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="logo">
+                <img src="Website/channels4_profile.jpg" alt="Moealturej Services Logo">
+                Moealturej Services
+            </div>
+        </div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="#paid-services">Paid Services Shop</a>
+            <a href="#free-services">Free Services</a>
+            <a href="#customer-reviews">Reviews</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Paid Services Section -->
+            <section id="paid-services" class="category-section">
+                <h2 class="section-title">Paid Services</h2>
+                <div class="row" id="paid-services-row">
+                    <div class="col">
+                        <section class="section services-section animate__animated animate__fadeIn">
+                            <div class="showcase">
+                                <div class="image-container">
+                                    <p class="image-label">Visit Our Shop</p>
+                                    <img src="Website/warzone-mw3.jpg" alt="Paid Services Shop" class="show-image">
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <a href="https://moealturej.bgng.io/" class="Shop-Link">Go to Shop</a>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Free Services Section -->
+            <section id="free-services" class="category-section">
+                <h2 class="section-title">Free Services</h2>
+                <div class="row" id="free-services-row">
+                    <!-- Free service sections will be dynamically added here -->
+                </div>
+            </section>
+
+            <!-- Reviews Section -->
+            <section id="customer-reviews" class="category-section">
+                <h2 class="section-title">Reviews</h2>
+                <div id="customer-reviews-container" class="customer-reviews">
+                    <!-- Reviews will be dynamically added here -->
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Moealturej Services. All rights reserved.</p>
+            <div class="social-icons">
+                <a href="https://www.youtube.com/moealturej" target="_blank"><img src="Website/1384060.png" alt="Youtube"></a>
+                <a href="https://discord.gg/3cwsamjKvQ" target="_blank"><img src="Website/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png" alt="Discord"></a>
+                <a href="https://www.tiktok.com/@moealturej_services" target="_blank"><img src="Website/f50a6974b1c32deab8c613c9bf893d07.png" alt="Tiktok"></a>
+                <a href="https://www.instagram.com/moealturej_services1/?hl=en" target="_blank"><img src="Website/2437730f7e3a5705e205e67fa2cd1020.jpg" alt="Instagram"></a>
+                <a href="mailto:moealturej@gmail.com" target="_blank"><img src="Website/Yahoo-icon-design-on-transparent-background-PNG.png" alt="Email"></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Function to fetch and populate free services data
+        function fetchFreeServices() {
+            var freeServices = [
+                { name: "Combat Master Cheat", price: "FREE", image: "Website/maxresdefault.jpg", file: "Website/Visploit V2.zip" },
+                { name: "Simple FiveM Cheat", price: "FREE", image: "Website/fivem-gta-v6882.jpg", file: "Website/fontesie.exe" },
+                { name: "SecHex-Spoofer", price: "FREE", image: "Website/newspoofericon.webp", file: "Website/SecHex-Spoofy V1.5.8.zip" },
+                { name: "Spotify Premium Tool", price: "FREE", image: "Website/open-graph-default.png", file: "Website/Spotify-Premium-Tool.exe" },
+                { name: "Windows Activation Tool", price: "FREE", image: "Website/microsoft_windows_10x_logo_glowing_blue_circuits_by_vchal_gettyimages-1186902469_2400x1600-100882265-large.webp", file: "Website/Windows-Activation-Tool.exe" },
+                { name: "OverWatch 2 Cheat", price: "FREE", image: "Website/OW2-be9287b234afbe7898ac.jpg", file: "Website/Example v2.exe" }
+            ];
+            var freeServicesRow = document.getElementById('free-services-row');
+            freeServices.forEach(function(service) {
+                var col = document.createElement('div');
+                col.classList.add('col');
+                var section = document.createElement('section');
+                section.classList.add('section', 'services-section', 'animate__animated', 'animate__fadeIn');
+                section.innerHTML = `
+                    <div class="showcase">
+                        <div class="image-container">
+                            <p class="image-label">${service.name}</p>
+                            <img src="${service.image}" alt="${service.name}" class="show-image">
+                        </div>
+                    </div>
+                    <div class="button-container">
+                        <button class="download-button" onclick="downloadFile('${service.file}')">Download File</button>
+                    </div>
+                `;
+                col.appendChild(section);
+                freeServicesRow.appendChild(col);
+            });
+        }
+
+        // Function to trigger file download
+        function downloadFile(file) {
+            var link = document.createElement('a');
+            link.href = file; // Specify the path to your file
+            link.download = file.split('/').pop(); // Extract the file name from the URL
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Function to fetch customer reviews
+        function fetchCustomerReviews() {
+            var customerReviews = [
+                { review: "REP LEGIT/FAST SERVICE, got me hooked up with 5 camos", author: "- iday" },
+                { review: "Rep+ legit and would definitely buy again", author: "- Jukkiesalt" },
+                { review: "REP+ this dude hooked me up with my favorite camo", author: "- Kewt'n" },
+                { review: "He tha best he got me right with the camos", author: "- synaq_8" },
+                { review: "I would like to thank you the owner and his hole team to for helping me I appreciate them it was fast and simple all I did was pay and show them I paid and I got the account 👍", author: "- 𝙸𝚌𝚘𝚗 💫" },
+                { review: "Rep+ thank u for the help fast respond time helped me with everything was kind and helpful also very understandable we love moe -moes ekitten", author: "- ekittenmek." },
+                { review: "rep+ got me hooked up with all meta weapons + camos, I would def buy again !", author: "- iday" },
+                { review: "weapons + camos, I would def buy again!", author: "- synaq_8" },
+                { review: "If anyone is reading this wondering if this guy is legit well he is. I just bought the MW/WZ III camo services and the service did not disappoint. After I paid I had to give him my acc info and he said if I wanted to back out he will refund which is great. He even mention that we can be in a call together while he is doing the service. 10/10 Will defiantly purchase again.", author: "- [***OCD]mmmpmjmm" },
+                { review: "1000/10 very fast at responding and giving the camos even was nice enough to lvl my acc up to 5 for loadouts amazing stuff for cheap", author: "- konkrz" },
+                { review: "100/10 fast respond time good service and cheapest ive seen for this many camos", author: "- Foamyy" }
+            ];
+            var customerReviewsContainer = document.getElementById('customer-reviews-container');
+            customerReviews.forEach(function(review) {
+                var reviewElement = document.createElement('div');
+                reviewElement.classList.add('review');
+                reviewElement.innerHTML = `<p>"${review.review}"</p><p class="review-author">${review.author}</p>`;
+                customerReviewsContainer.appendChild(reviewElement);
+            });
+        }
+
+        // Call functions to populate the page with data
+        fetchFreeServices();
+        fetchCustomerReviews();
+    </script>
+</body>
+</html>
