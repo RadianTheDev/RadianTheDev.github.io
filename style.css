@@ -1,9 +1,0 @@
-body {
-  background: url('background.gif') no-repeat;
-  background-size: cover;
-  pointer-events: none; /* make the background image clickable */
-}
-
-.product {
-  pointer-events: auto; /* make the product container clickable */
-}
